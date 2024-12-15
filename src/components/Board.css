@@ -94,3 +94,41 @@
     color: #888;
     font-style: italic;
 }
+/* .boards-list {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+} */
+
+.boards-list.hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+
+.toggle-button {
+    display: flex;
+    
+    position: absolute;
+    padding: 10px 20px;
+    bottom: 0;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-align: center;
+    color: #828fa3;
+    font-weight: 700;
+  
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+.toggle-button img{
+    margin-right: 10px;
+}
+.toggle-button button{
+    border: none;
+    color: #828fa3;
+    font-weight: 700;
+  
+    background-color: white;
+    font-size: 15px;
+}
