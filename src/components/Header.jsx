@@ -10,10 +10,7 @@ function Header(props) {
            
 
             </div>
-{/* 
-            <div className="platform">
-                <h2>Platform Launch</h2>
-            </div> */}
+
               <div className="platform">
                 <h2>{props.headerText}</h2>
             </div>
