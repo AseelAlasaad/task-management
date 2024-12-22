@@ -3,6 +3,7 @@
   box-sizing: border-box;
   font-family: Plus Jakarta Sans, sans-serif;
 }
+
 html, body {
  
   margin: 0; /* Removes any potential margin causing overflow */
@@ -14,7 +15,13 @@ html, body {
 .App {
   text-align: center;
 }
-
+.big{
+  background-color: red;
+  width: 50%;
+}
+.small{
+  background-color: #282c34;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

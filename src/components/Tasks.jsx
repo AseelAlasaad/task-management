@@ -1,6 +1,14 @@
 import './Tasks.css';
+import { useState } from 'react';
 function Tasks(props) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const handleCardClick = () => {
+        setIsModalOpen(true);
+    };
 
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
     return (
         <>
             <div className='task-card'>

@@ -2,6 +2,7 @@ import Data from '../data.json';
 import BoardDetalies from './BoardDetalies';
 import { useState } from 'react';
 import iconBoard from '../assets/icon-board.svg'
+import showsidebar from '../assets/icon-show-sidebar.svg'
 import hidesidebar from '../assets/icon-hide-sidebar.svg'
 import Header from './Header';
 import './Board.css';
@@ -29,11 +30,18 @@ function Bords() {
         <>
           <Header headerText={headerText}/>
         <div className="bords-container">
-           <div className="toggle-button">
-                    <img id="boardimg" src={hidesidebar} alt="" />
-                    <button onClick={toggleLeftSection} >
-                        {isLeftSectionVisible ? 'Hide Sidebar' : 'Show Sidebar'}
-                    </button>
+            <div className='toggle-button'>
+
+           <div  className={isLeftSectionVisible ? 'hide-btn' : 'show-btn'} onClick={toggleLeftSection}>
+                <img
+                id="boardimg"
+                src={isLeftSectionVisible ? hidesidebar : showsidebar}
+                alt={isLeftSectionVisible ? 'Hide Sidebar' : 'Show Sidebar'}
+                />
+            
+                {isLeftSectionVisible ? 'Hide Sidebar' : ''}
+          
+                </div>
             
             </div> 
             {/* Left Side: List of Boards */}

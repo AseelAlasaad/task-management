@@ -107,28 +107,52 @@
 
 .toggle-button {
     display: flex;
-    
-    position: absolute;
-    padding: 10px 20px;
-    bottom: 0;
-    margin-bottom: 20px;
-    margin-left: 20px;
     text-align: center;
+    justify-content: center;
+    position: absolute;
+    
+    bottom: 0;
+    /* Ensures the button stays at the bottom */
+
     color: #828fa3;
     font-weight: 700;
-  
-    background-color: white;
     font-size: 15px;
     cursor: pointer;
+    box-sizing: border-box; /* Ensures padding doesn't add extra size */
 }
-.toggle-button img{
+
+.toggle-button img {
     margin-right: 10px;
 }
-.toggle-button button{
+
+.toggle-button .hide-btn {
     border: none;
     color: #828fa3;
     font-weight: 700;
-  
     background-color: white;
+    padding: 10px 20px;
+    left: 20px; /* Use left instead of margin-left for better positioning */
     font-size: 15px;
+   
+    line-height: normal; /* Normalizes line height */
 }
+
+.toggle-button .show-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #635fc7;
+    /* border-radius: 8px; */
+    border-radius: 0 100px 100px 0;
+    padding: 15px 25px;
+
+    transition: .3s;
+    width: 52px;
+  }
+
+  
+.toggle-button .show-btn img {
+    margin-left: 10px;
+ 
+  }
