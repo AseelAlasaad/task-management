@@ -76,7 +76,9 @@
     border-radius: 0 100px 100px 0;
     color: #fff;
 }
-
+#new-board{
+    color: #635fc7;
+}
 
 /* Right: Board Details */
 
@@ -110,14 +112,12 @@
     text-align: center;
     justify-content: center;
     position: absolute;
-    
     bottom: 0;
-    /* Ensures the button stays at the bottom */
-
     color: #828fa3;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
+    border: none;
     box-sizing: border-box; /* Ensures padding doesn't add extra size */
 }
 
@@ -126,14 +126,13 @@
 }
 
 .toggle-button .hide-btn {
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #828fa3;
-    font-weight: 700;
     background-color: white;
-    padding: 10px 20px;
-    left: 20px; /* Use left instead of margin-left for better positioning */
-    font-size: 15px;
-   
+    padding: 15px 30px;
+    left: 20px; 
     line-height: normal; /* Normalizes line height */
 }
 
@@ -143,10 +142,8 @@
     align-items: center;
     justify-content: center;
     background-color: #635fc7;
-    /* border-radius: 8px; */
     border-radius: 0 100px 100px 0;
     padding: 15px 25px;
-
     transition: .3s;
     width: 52px;
   }
@@ -155,4 +152,18 @@
 .toggle-button .show-btn img {
     margin-left: 10px;
  
+  }
+
+
+  .toggle-button .show-btn:hover {
+    background-color: rgba(99, 95, 199, .5);
+    border-radius: 0 100px 100px 0;
+   
+  }
+
+  .toggle-button .hide-btn:hover {
+    background-color:#eceaea;
+    border-radius: 0 100px 100px 0;
+    color: #635fc7;
+   
   }

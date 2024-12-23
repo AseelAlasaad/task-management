@@ -4,13 +4,14 @@ import { useState } from 'react';
 import iconBoard from '../assets/icon-board.svg'
 import showsidebar from '../assets/icon-show-sidebar.svg'
 import hidesidebar from '../assets/icon-hide-sidebar.svg'
+import addboard from '../assets/icon-add-task-mobile.svg'
 import Header from './Header';
 import './Board.css';
 
 function Bords() {
     const data = Data.boards;
     const [selectedBoard, setSelectedBoard] = useState(null); // Track the selected board
-    const [headerText, setHeaderText] = useState("Platform Launch"); 
+    const [headerText, setHeaderText] = useState("Platform Launch");
     const [isLeftSectionVisible, setIsLeftSectionVisible] = useState(true);
 
     const toggleLeftSection = () => {
@@ -19,33 +20,40 @@ function Bords() {
     function handleBoardSelection(board) {
         if (selectedBoard === board) {
             setSelectedBoard(null); // Deselect if the same board is clicked
-            setHeaderText(board.name); 
+            setHeaderText(board.name);
         } else {
             setSelectedBoard(board); // Set the clicked board
-            setHeaderText(board.name); 
+            setHeaderText(board.name);
         }
     }
 
     return (
         <>
-          <Header headerText={headerText}/>
-        <div className="bords-container">
-            <div className='toggle-button'>
+            <Header headerText={headerText} />
+            <div className="bords-container">
+                <div className='toggle-button'>
 
-           <div  className={isLeftSectionVisible ? 'hide-btn' : 'show-btn'} onClick={toggleLeftSection}>
-                <img
-                id="boardimg"
-                src={isLeftSectionVisible ? hidesidebar : showsidebar}
-                alt={isLeftSectionVisible ? 'Hide Sidebar' : 'Show Sidebar'}
-                />
-            
-                {isLeftSectionVisible ? 'Hide Sidebar' : ''}
-          
+                    <div className={isLeftSectionVisible ? 'hide-btn' : 'show-btn'} onClick={toggleLeftSection}>
+                        <img
+                            id="boardimg"
+                            src={isLeftSectionVisible ? hidesidebar : showsidebar}
+                            alt={isLeftSectionVisible ? 'Hide Sidebar' : 'Show Sidebar'}
+                        />
+
+                        <p>
+                            {
+
+                                isLeftSectionVisible ? 'Hide Sidebar' : ''
+
+                            }
+
+                        </p>
+
+                    </div>
+
                 </div>
-            
-            </div> 
-            {/* Left Side: List of Boards */}
-            {isLeftSectionVisible && (
+                {/* Left Side: List of Boards */}
+                {isLeftSectionVisible && (
                     <div className="boards-list">
                         <p className="bordlen">All BOARDS ({data.length})</p>
                         <div className="board-row">
@@ -53,31 +61,39 @@ function Bords() {
                                 <div
                                     key={index}
                                     onClick={() => handleBoardSelection(item)}
-                                    className={`borderItem ${
-                                        selectedBoard === item ? 'activeitem' : ''
-                                    }`}
+                                    className={`borderItem ${selectedBoard === item ? 'activeitem' : ''
+                                        }`}
                                 >
                                     <img id="boardimg" src={iconBoard} alt="" />
                                     {item.name}
                                 </div>
                             ))}
+
+
+                            <div
+                                className={`borderItem`}
+                            >
+                                <img id="new-board" src={addboard} alt="" />
+                                  Create New Board
+                            </div>
+
                         </div>
                     </div>
                 )}
-          
-            {/* Right Side: Selected Board Details */}
-            <div className="board-details">
-                {selectedBoard ? (
-                    <BoardDetalies selectedBoard={selectedBoard.columns} />
-                ) : (
-                    <p className="placeholder-text">Select a board to view details</p>
-                )}
-            </div>
 
-            
-        </div>
+                {/* Right Side: Selected Board Details */}
+                <div className="board-details">
+                    {selectedBoard ? (
+                        <BoardDetalies selectedBoard={selectedBoard.columns} />
+                    ) : (
+                        <p className="placeholder-text">Select a board to view details</p>
+                    )}
+                </div>
+
+
+            </div>
         </>
-        
+
     );
 }
 

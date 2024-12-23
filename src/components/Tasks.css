@@ -10,12 +10,8 @@
 .task-cards {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     gap: 20px; /* Space between cards */
-  /* justify-content: space-between; 
 
-    border-radius: 8px;
-    padding-bottom: 10px; */
 
 }
 
