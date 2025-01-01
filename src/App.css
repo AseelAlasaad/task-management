@@ -9,6 +9,9 @@ html, body {
   margin: 0; /* Removes any potential margin causing overflow */
   padding: 0; /* Removes any padding */
 }
+body{
+  overflow: hidden;
+}
 .bordlen{
   text-align: left;
 }

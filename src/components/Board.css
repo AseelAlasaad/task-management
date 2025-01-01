@@ -4,24 +4,25 @@
     align-items: flex-start;
     gap: 20px;
     background-color: #f4f7fd;
-    height: 100vh; /* Ensure the container matches the viewport */
+    height: 100vh; 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden; /* Prevent unintended scrolling */
+
 }
 
 .boards-list {
     flex: 0.4;
     display: flex;
-    overflow-y: auto; /* Scroll if content exceeds */
+    overflow-y: auto; 
     flex-direction: column;
     gap: 10px;
     background-color: white;
     height: calc(100vh - 0px); /* Remove white space */
-    box-sizing: border-box; /* Include padding in height calculations */
-    padding: 0 10px; /* Add padding inside */
+    box-sizing: border-box; 
+    
 }
+
 
 
 .bordlen {
@@ -71,6 +72,13 @@
     border-radius: 0 100px 100px 0;
     color: #635fc7;
 }
+
+.borderItem:last-child{
+   color: #635fc7;
+}
+.borderItem:last-child img{
+    filter: invert(39%) sepia(47%) saturate(748%) hue-rotate(203deg) brightness(94%) contrast(93%);
+}
 .activeitem {
     background: #635fc7;
     border-radius: 0 100px 100px 0;
@@ -83,22 +91,26 @@
 /* Right: Board Details */
 
 .board-details {
-    flex: 2;
-    min-height: 200px; 
-    padding: 20px;
-    overflow-y: auto; 
-    
+    flex: 2; /* Take a proportionate amount of available space */
+  padding: 10px;
+
+ 
 
 }
+.board-details::-webkit-scrollbar {
+    display: none; 
+  }
+
+
+
+
 
 /* Placeholder text for empty state */
 .placeholder-text {
     color: #888;
     font-style: italic;
 }
-/* .boards-list {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-} */
+
 
 .boards-list.hidden {
     transform: translateX(-100%);
@@ -109,6 +121,7 @@
 
 .toggle-button {
     display: flex;
+
     text-align: center;
     justify-content: center;
     position: absolute;
@@ -126,6 +139,7 @@
 }
 
 .toggle-button .hide-btn {
+    
     display: flex;
     align-items: center;
     justify-content: center;

@@ -14,6 +14,8 @@ function Bords() {
     const [headerText, setHeaderText] = useState("Platform Launch");
     const [isLeftSectionVisible, setIsLeftSectionVisible] = useState(true);
 
+    const [color, setColor] = useState('red');
+
     const toggleLeftSection = () => {
         setIsLeftSectionVisible(!isLeftSectionVisible);
     };
@@ -55,6 +57,7 @@ function Bords() {
                 {/* Left Side: List of Boards */}
                 {isLeftSectionVisible && (
                     <div className="boards-list">
+                        <div className='boardcontent'>
                         <p className="bordlen">All BOARDS ({data.length})</p>
                         <div className="board-row">
                             {data.map((item, index) => (
@@ -72,12 +75,16 @@ function Bords() {
 
                             <div
                                 className={`borderItem`}
+                                
                             >
-                                <img id="new-board" src={addboard} alt="" />
-                                  Create New Board
+                                <img id="boardimg" src={iconBoard} alt="" />
+                               
+                                  + Create New Board
                             </div>
 
                         </div>
+                            </div>
+                   
                     </div>
                 )}
 

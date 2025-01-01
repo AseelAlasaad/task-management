@@ -4,7 +4,8 @@ import Addtask from '../assets/icon-add-task-mobile.svg'
 function Header(props) {
 
     return (
-        <div className="container">
+        <div className='header-container'>
+     <div className="container">
             <div className="Logo">
             <img src={logoDark} alt="logo" />
            
@@ -20,6 +21,8 @@ function Header(props) {
             </div>
 
         </div>
+        </div>
+   
     );
 }
 export default Header;
